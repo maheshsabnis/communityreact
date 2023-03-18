@@ -17,7 +17,7 @@ const SelectComponent=(props)=>{
     } else {
         return(
             <div>
-                <select onChange={handleChange}>
+                <select onChange={handleChange} className="form-control">
                     {
                         props.dataSource.map((e,i)=>(
                             <option key={i} value={e}>{e}</option>

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import ProductFormConponent from './components/productformcomponent';
 const message = "I am from Parent";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,7 +12,8 @@ root.render(
     {/* The 'msg' is props that will be added
       in 'props'
     */}
-    <App msg={message}/>
+    {/* <App msg={message}/> */}
+    <ProductFormConponent/>
   </React.StrictMode>
 );
 

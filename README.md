@@ -29,3 +29,9 @@
     - useMemo()
         - Actualy a cache value     
     
+# Practices
+- Make sure that, if the multiple components have similar UI with change in data, then create a re-usable component and use it as a child across various components    
+- Guidelines for re-usable components
+    - Use the Standard HTML UI
+    - Plan for Data properties those will accept data from its parent
+    - Plan for callbacks to emit data from child to parent component
