@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DataGridComponent from "./datagridcomponent";
 import SelectComponent from "./selectcomponent";
 
 const ProductFormConponent=()=>{
@@ -14,6 +15,10 @@ const ProductFormConponent=()=>{
 
    const catrgories = ['ECT', 'ECL', 'FOD', 'FSN'];
    const manufacturers = ['M1', 'M2', 'M3', 'M4'];
+
+   const save=()=>{
+     setProducts([...products, product]);
+   };
 
    return (
     <div className="container">
@@ -63,8 +68,12 @@ const ProductFormConponent=()=>{
         </div>
         <div className="btn btn-group-lg">
             <button className="btn btn-warning">New</button>
-            <button className="btn btn-success">Save</button>
+            <button className="btn btn-success"
+              onClick={save}
+            >Save</button>
         </div>
+        <hr/>
+         <DataGridComponent dataSource={products}></DataGridComponent>
     </div>
    );
 
