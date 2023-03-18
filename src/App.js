@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SelectComponent from './components/selectcomponent';
 import { DataContext } from './components/datacontext';
 import SelectContextComponent from './components/selectcontextcomponent';
+import SelectContextEventComponent from './components/selectcontexteventcomponent';
 // Three Parts 
 // 1. UI
 // 2. Data Stystem aka Property System aka State
@@ -16,6 +17,7 @@ function App(props) {
   const [x, setX]  = useState(10);
   const [data, setData] = useState(['Tejas','Mahesh','Ramesh', 'Ram']);
   const [name, setName] = useState('');
+  const [name1, setName1] = useState('');
   return (
     <div className="App">
        <h3>{props.msg}</h3>   
@@ -38,6 +40,21 @@ function App(props) {
           <DataContext.Provider value={data}>
             <SelectContextComponent></SelectContextComponent>
           </DataContext.Provider>
+        </div>
+        <hr/>
+        <div>
+        <h6>Passing Data to Child Component using DataContext with data and calback</h6>
+           {/* data : the state that is passed to consumer */}
+           {/* setName: the callback used by useState() to update the state 
+             in Provider component
+           */}
+           <DataContext.Provider value={{data, setName1}}>
+             <SelectContextEventComponent></SelectContextEventComponent>
+           </DataContext.Provider>
+           <hr/>
+           <strong>
+              Data Received from Child : {name1}
+           </strong>
         </div>
     </div>
   );

@@ -3,6 +3,7 @@ import React from 'react';
 
 const SelectComponent=(props)=>{
     const handleChange=(evt)=>{
+        // the callbak of the 'props'
         props.selectedValue(evt.target.value);
     }
     if(props.dataSource === undefined || props.dataSource.length === 0){
