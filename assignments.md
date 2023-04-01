@@ -15,3 +15,9 @@
         - On clicking of the table row, the selected row data must be passed to the parent             
     - The ProductFormCompoenent will add new record in products array on click on Save button
     -  The ProductFormCompoenent will clear all input elements  on click on Clear button   
+
+ # Date: 01-April-2023
+
+ 1. Complete the ProductFormComponent for CRUD Operations using Service
+ 2. Create a SearchComponent that will have a Text Input Element with followig behavior
+    - Let the end-user enter the search text in it e.g. ProductName, Manufacturer, Description, etc and based on this search value(s), the DataGridComponent will show match products (refer amazon search) 
