@@ -22,3 +22,8 @@ let values = Object.values(obj);
 console.log('====================================');
 console.log(values);
 console.log('====================================');
+
+var x = ['A1','B1'];
+console.log(x);
+x = [...x, 'C1', 'D1']; 
+console.log(x);

@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import ProductFormConponent from './components/productformcomponent';
+import ToggleComponent from './components/lifecycle/tooglecomponent';
+import UseRefDemoComponent from './components/userefcomponent';
 const message = "I am from Parent";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +15,7 @@ root.render(
       in 'props'
     */}
     {/* <App msg={message}/> */}
-    <ProductFormConponent/>
+    <UseRefDemoComponent></UseRefDemoComponent>
   </React.StrictMode>
 );
 

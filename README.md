@@ -5,6 +5,22 @@
     - useEffect()
         - Handles lifecycle for component i.e. mounting and unmounting and perform state updates
         - Manages the heavy-load operations e.g. AJAX Calls
+        - useEffect(componentMountCallback return comoponentWillUnMountCallBack, DEPENDENCY-PARAMETER);
+            - componentMountCallback
+                - This will be executed after the component is rendered (SHOW HTML in Browser)
+                - Write Heavy-Logic here  e.g. AJAX call
+                - If this logic (e.g. AJAX call) updates the state property, this will update the DOM again i.e. rendering
+                - Since useEffect () will continue executing, this will udpate state again-an-again and hence cost the rendering
+                - Use the dependency parameter to inform the useEffect() that the state is already updates and hence ueEffect() execution can stop 
+            - comoponentWillUnMountCallBack
+                - This will be executed when the Component is removed from DOM i.e. Browser's UI Thread
+                - Write the following type of code
+                    - Relese Promise Subscription
+                    - Relese Windows Events if any
+                        - e.g.
+                            - MouseMove
+                            - Keyboard events
+                    - Clean states if any    
     - useContext()
         - Effective way of sharing state across components with parent-child relationship
         - React.createContext()
@@ -18,6 +34,7 @@
                     - The component that subscribes to the 'context' using 'useContext()' to read values as well as link with the callback, if exist
     - useRef()
         - Associated with state but does not re-render the DOM
+        - Prevent the Current Component from UnNecessary Re-Rendering
     - useReducer()
         - Used for implementing State update in transition
             - INITIAL_STATE
@@ -26,9 +43,14 @@
     - useCallback()
         - used to return the memoized callback function
         - Caching
+        - Execute the function / logic from child in the Parent Component and hence pass the updated value from Parent to Child
     - useMemo()
-        - Actualy a cache value     
+        - Actualy a cache value  
+        - Cache resule of the Complex Function is it exist in the Component   
     
+- Use either 'fetch()' object from ES 6 OR use 'axios' library package (Recommended)
+    - Http Calls to External APIs
+    - They are 'Promise' based objects    
 # Practices
 - Make sure that, if the multiple components have similar UI with change in data, then create a re-usable component and use it as a child across various components    
 - Guidelines for re-usable components
