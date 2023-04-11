@@ -55,10 +55,13 @@ const ProductFormConponent=()=>{
    };
    return (
     <div className="container">
+       <form name="frmProduct" onSubmit={save}>
         <h1>Product Information Form</h1>
         <div className="form-group">
             <label>Product Row Id</label>
             <input type="text" value={product.ProductRowId}
+             name="ProductRowId"
+              readOnly
                className="form-control"
                 onChange={(evt)=>setProduct({...product, 
                     ProductRowId: parseInt(evt.target.value)})}/>
@@ -66,6 +69,7 @@ const ProductFormConponent=()=>{
         <div className="form-group">
             <label>Product Id</label>
             <input type="text" value={product.ProductId}
+              name="ProductId"
                className="form-control"
                 onChange={(evt)=>setProduct({...product, 
                     ProductId: evt.target.value})}/>
@@ -74,6 +78,7 @@ const ProductFormConponent=()=>{
             <label>Product Name</label>
             <input type="text" value={product.ProductName}
                className="form-control"
+               name="ProductName"
                onChange={(evt)=>setProduct({...product, 
                 ProductName: evt.target.value})}/>
         </div>
@@ -103,6 +108,7 @@ const ProductFormConponent=()=>{
         <div className="form-group">
             <label>Description</label>
             <textarea  value={product.Description}
+              name="Description"
                className="form-control"
                onChange={(evt)=>setProduct({...product, 
                 Description: evt.target.value})}/>
@@ -110,6 +116,7 @@ const ProductFormConponent=()=>{
         <div className="form-group">
             <label>Base Price</label>
             <input type="text" value={product.BasePrice}
+              name="BasePrice"
                className="form-control"
                onChange={(evt)=>setProduct({...product, 
                 BasePrice: parseInt(evt.target.value)})}
@@ -117,18 +124,21 @@ const ProductFormConponent=()=>{
         </div>
         <div className="btn btn-group-lg">
             <button className="btn btn-warning" onClick={clear}>New</button>
-            <button className="btn btn-success"
-              onClick={save}
+            <button className="btn btn-success" type="submit"
+              
             >Save</button>
         </div>
+        </form>   
         <br/>
          <div className="container">
            <strong>
             {message}
            </strong>
          </div>
+
         <hr/>
          <DataGridComponent dataSource={products}></DataGridComponent>
+
     </div>
    );
 

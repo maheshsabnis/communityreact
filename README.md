@@ -51,9 +51,63 @@
 - Use either 'fetch()' object from ES 6 OR use 'axios' library package (Recommended)
     - Http Calls to External APIs
     - They are 'Promise' based objects    
+
+
+# React Boundaries
+- No inbuilt validations exists
+    - formik and yup
+        - Additional JS libraries can be used for form management
+    - Use HTML 5 Validation Support
+    - Write explict domain validations (recommended)
+- Routing
+    - Single Page App (SPA)     
+    - React-Router
+        - React-Router-DOM
+- Lack of Framework Feature Support in react
+    -  Think of using 'Next.js' for it
+    - React Framework
+        - by Vercel
+        - Manage Lifecycle of React Component with following
+            - Routing
+            - Server Side Rendering
+            - Dynamic Routes
+            - Inbuilt Suppoirt for API
+            - Authorization                
 # Practices
 - Make sure that, if the multiple components have similar UI with change in data, then create a re-usable component and use it as a child across various components    
 - Guidelines for re-usable components
     - Use the Standard HTML UI
     - Plan for Data properties those will accept data from its parent
     - Plan for callbacks to emit data from child to parent component
+- Make sure that create an ErrorBundary component
+    - This will be a class component derived from 'Component' base class
+    - This component will implement following two methods
+        - 'getDerivedStateFromError()'
+            - this is a static method that will listen to the props/state changes from  the child componemt and if there us an error it will trigger following method
+        - componentDidCatch
+            - This will display error message
+            - Then the fallback rendering will be executed
+- Lazyloading
+    - The 'Suspense'
+        - The Component (ExoticComponent), used for tracking the component loading if the component being load is taking time
+        - Till the component is not loaded, the fallbackUI will be shown in UI tree
+    - The 'React.lazy()'
+        - The function that loads the component based on import URL                          
+- React-Router-DOM
+    - BrowserRouter
+        - Container COmponent under which the routing will takes place
+    - Routes
+        - Defining the Route Paths aka Table
+        - Collection of 'Route'
+        - The 'path', the URI
+        - The 'element', the component         
+        - The 'index' propert, that represents the default component that will be rendered   
+    - Outlet
+        - The Container Compone that will render component when it is requested
+    - Link
+        -  Used to query the route table for navigation
+        - The 'to' property taht will be used for navigation  
+    - useNavigation() hook
+        - THis will be used to provode navigation in routing
+    - useParams() hook
+        - This is used to read the current route parameter
